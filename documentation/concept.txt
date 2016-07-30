@@ -1,0 +1,2 @@
+* The project 'WhipList' is a task scheduler developed for pinstorm Technologies in the summer of 2016.
+* Developed by Tanuj Kaza , intern at Pinstorm Technologies in the summer of 2016.

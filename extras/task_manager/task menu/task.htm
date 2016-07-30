@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js">
+	</script>
+</head>
+
+<body>
+	<form action="" method="post" target="_self" accept-charset="UTF-8"
+		enctype="application/x-www-form-urlencoded" autocomplete="off" novalidate>
+	
+		<label> Enter project id: </label><br />
+		<input type="text" onchange="showdata_p(this.value)"> <br /> <br />
+		<label> Enter task id: </label><br />
+		<input type="text" onchange="showdata_t(this.value)"> <br /> <br />
+		<label> Enter update id: </label><br />
+		<input type="text" onchange="showdata_u(this.value)"> <br /> <br />
+
+	</form>
+	<br />
+
+	<script>
+		function showdata_p(str){
+			var xhttp = new XMLHttpRequest() ;
+			xhttp.onreadystatechange = function(){
+				 if (xhttp.readyState == 4 && xhttp.status == 200 ){
+					document.getElementByID("data").innerHTML = xhttp.responseText ;
+				} 
+			}; 
+			xhttp.open("GET", "task.php?p="+str, true) ;
+			xhttp.send() ;
+		}
+		function showdata_t(str){
+			var xhttp = new XMLHttpRequest() ;
+			xhttp.onreadystatechange = function(){
+				 if (xhttp.readyState == 4 && xhttp.status == 200 ){
+					document.getElementByID("data").innerHTML = xhttp.responseText ;
+				} 
+			}; 
+			xhttp.open("GET", "task.php?t="+str, true) ;
+			xhttp.send() ;
+		}
+		function showdata_u(str){
+			var xhttp = new XMLHttpRequest() ;
+			xhttp.onreadystatechange = function(){
+				 if (xhttp.readyState == 4 && xhttp.status == 200 ){
+					document.getElementByID("data").innerHTML = xhttp.responseText ;
+				} 
+			}; 
+			xhttp.open("GET", "task.php?u="+str, true) ;
+			xhttp.send() ;
+		}
+		
+	</script>
+
+	<div id = "data" > Data will be shown here </div>
+
+</body>
+</html>
